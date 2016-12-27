@@ -33,9 +33,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
         director->setOpenGLView(glview);
     }
 
-    director->setDisplayStats(true);
+    director->setDisplayStats(false);
     director->setAnimationInterval(1.0f / 60);
-	glview->setDesignResolutionSize(m_WIDTH, m_HEIGHT, ResolutionPolicy::EXACT_FIT);
+	glview->setDesignResolutionSize(320, 240, ResolutionPolicy::EXACT_FIT);
     register_all_packages();
 
 	director->runWithScene(WorldScene::createScene());
