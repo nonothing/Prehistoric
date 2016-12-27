@@ -23,11 +23,10 @@ bool WorldScene::init()
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile("plists/human.plist", "atlas/human.png");
 //	AnimationCache::getInstance()->addAnimationsWithFile("animation/players.plist");
 
-	_mapLayer = Layer::create();
 	_player = Player::create(_mapLayer);
 	_player->setPosition(Director::getInstance()->getWinSize() / 2);
 
-	addChild(_mapLayer);
+	
 	addChild(_player);
 
 	createControll(EKEYBOARD);
@@ -37,8 +36,10 @@ bool WorldScene::init()
 
 void WorldScene::initMap()
 {
+	_mapLayer = Layer::create();
+	addChild(_mapLayer);
 	auto map = CSLoader::createNode("Level_1.csb");
-	addChild(map);
+	_mapLayer->addChild(map);
 }
 
 void WorldScene::createControll(EControl type)

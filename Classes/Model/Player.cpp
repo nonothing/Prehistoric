@@ -46,11 +46,11 @@ void Player::loadParametrs()
 
 cocos2d::Point Player::getOffsetToDir()
 {
-	if (_isDead || _isStop) return Point::ZERO;
+//	if (_isDead || _isStop) return Point::ZERO;
 	switch (_dir)
 	{
-	case LEFT: return Point(-_data._speed.x, 0);
-	case RIGHT:return Point(_data._speed.x, 0);
+	case LEFT: return Point(-1, 0);
+	case RIGHT:return Point(1, 0);
 	case UP:   return Point(0, _data._speed.y);
 	case DOWN: return Point(0, -_data._speed.y);
 	default:	return Point::ZERO;
@@ -80,7 +80,7 @@ void Player::move()
 // 				}
 // 			}
 // 
-// 			nextMove();
+ 			nextMove();
 // 
 // 			_dir = _oldDir;
 // 		}
@@ -231,11 +231,10 @@ bool Player::isMapMove(const Point& point)
 {
 	Size size = Director::getInstance()->getWinSize();
 	Size mapSize = _mapLayer->getContentSize();
-	// todo delete tag
 
-	return (_dir == DOWN && point.y < size.height / 2 && _mapLayer->getPositionY() < mapSize.height + 230 && _mapLayer->getTag() == 2)
+	return (_dir == DOWN && point.y < size.height / 2 && _mapLayer->getPositionY() < mapSize.height + 230)
 		|| (_dir == UP && point.y > size.height / 2 && _mapLayer->getPositionY() > 0)
-		|| (_dir == RIGHT && point.x > size.width / 2 && _mapLayer->getPositionX() > -mapSize.width && _mapLayer->getTag() == 1)
+		|| (_dir == RIGHT && point.x > size.width / 2 && _mapLayer->getPositionX() > -mapSize.width)
 		|| (_dir == LEFT && point.x < size.width / 2 && _mapLayer->getPositionX() < 0);
 }
 
