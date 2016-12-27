@@ -13,6 +13,15 @@
     <Filter Include="src\Scene">
       <UniqueIdentifier>{7e1a3b9c-9666-43dc-a678-67c90794541a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Model">
+      <UniqueIdentifier>{2f2bab8d-84ac-4cf2-a74a-c0baf795cb0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\utils">
+      <UniqueIdentifier>{7d754303-6ada-4106-afac-83de5b0905ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\enumerate">
+      <UniqueIdentifier>{35185018-9b8e-4a38-930f-56079d084814}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -24,6 +33,30 @@
     <ClCompile Include="..\Classes\Scene\WorldScene.cpp">
       <Filter>src\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Model\ControlButton.cpp">
+      <Filter>src\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\ControlJoystick.cpp">
+      <Filter>src\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\ControlKeyBoard.cpp">
+      <Filter>src\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\GameSettings.cpp">
+      <Filter>src\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\GameSounds.cpp">
+      <Filter>src\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\utils\CSVReader.cpp">
+      <Filter>src\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\WorldObject.cpp">
+      <Filter>src\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Model\Player.cpp">
+      <Filter>src\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -34,6 +67,57 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Scene\WorldScene.h">
       <Filter>src\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\ControlButton.h">
+      <Filter>src\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\ControlJoystick.h">
+      <Filter>src\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\ControlKeyBoard.h">
+      <Filter>src\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\GameSettings.h">
+      <Filter>src\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\GameSounds.h">
+      <Filter>src\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\IControl.h">
+      <Filter>src\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\utils\Events.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\utils\Utils.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\utils\CSVReader.h">
+      <Filter>src\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\enumerate\Direction.h">
+      <Filter>src\enumerate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\enumerate\EControl.h">
+      <Filter>src\enumerate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\enumerate\EEventType.h">
+      <Filter>src\enumerate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\enumerate\ENPC.h">
+      <Filter>src\enumerate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\enumerate\ESounds.h">
+      <Filter>src\enumerate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\PlayerData.h">
+      <Filter>src\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\WorldObject.h">
+      <Filter>src\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Model\Player.h">
+      <Filter>src\Model</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
