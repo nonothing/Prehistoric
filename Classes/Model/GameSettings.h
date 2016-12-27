@@ -28,8 +28,8 @@ public:
 	float getOpacityButtons();
 	bool isMusic();
 	void setMusic(bool value);
-	void saveButtonPosition(cocos2d::Sprite* button, bool single);
-	cocos2d::Point getPosition(size_t tag, bool single);
+	void saveButtonPosition(cocos2d::Sprite* button);
+	cocos2d::Point getPosition(size_t tag);
 
 	EControl getControlType();
 	void saveControlType(EControl type);

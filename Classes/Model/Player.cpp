@@ -4,7 +4,7 @@
 
 USING_NS_CC;
 #define ANIM_TAG 225 
-const static std::string sDirAnimName[] = { "_left_3.png", "_down_3.png", "_left_3.png", "_up_3.png", "" };
+const static std::string sDirAnimName[] = { "1.png", "1.png", "1.png", "1.png", "" };
 
 Player* Player::create(cocos2d::Layer* layer)
 {
@@ -28,8 +28,7 @@ bool Player::init(cocos2d::Layer* layer)
 	_data = PlayerData();
 	schedule(schedule_selector(Player::update), 0.01f);
 	
-	_sprite = Sprite::createWithSpriteFrameName("player_down_3.png");
-	_sprite->setPositionY(12);
+	_sprite = Sprite::createWithSpriteFrameName("human_1.png");
 	addChild(_sprite);
 	_isStop = false;
 
@@ -114,7 +113,7 @@ void Player::update(float dt)
 // 	if (_data._interval >= _data._maxInterval)
 // 	{
 // 		_data._interval = 0;
-// 		move();
+ 		move();
 // 	}
 	
 }
@@ -130,12 +129,12 @@ void Player::setDirection(Direction dir)
 	{
 		_sprite->stopActionByTag(ANIM_TAG);
 		_animDir = _dir;
-		auto name = "player_"+ sDirAnimName[_dir]; //TODO
+		auto name = "human_"+ sDirAnimName[_dir]; //TODO
 		_sprite->setSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName(name));
 	}
 	else
 	{
-		_sprite->setFlippedX(dir == RIGHT);
+		_sprite->setFlippedX(dir == LEFT);
 	}
 
 	_dir = dir;

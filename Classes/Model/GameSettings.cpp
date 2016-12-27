@@ -65,17 +65,17 @@ void GameSettings::setMusic(bool value)
 	UserDefault::getInstance()->flush();
 }
 
-void GameSettings::saveButtonPosition(cocos2d::Sprite* button, bool single)
+void GameSettings::saveButtonPosition(cocos2d::Sprite* button)
 {
 	std::string value = myUtils::to_string(button->getPositionX()) + "@" + myUtils::to_string(button->getPositionY());
-	std::string key = (single ? BUTTON_POS_SINGLE_KEY : BUTTON_POS_KEY) + myUtils::to_string(button->getTag());
+	std::string key = BUTTON_POS_KEY + myUtils::to_string(button->getTag());
 	UserDefault::getInstance()->setStringForKey(key.c_str(), value);
 	UserDefault::getInstance()->flush();
 }
 
-Point GameSettings::getPosition(size_t tag, bool single)
+Point GameSettings::getPosition(size_t tag)
 {
-	std::string key = (single ? BUTTON_POS_SINGLE_KEY : BUTTON_POS_KEY) + myUtils::to_string(tag);
+	std::string key = BUTTON_POS_KEY + myUtils::to_string(tag);
 	std::string result = UserDefault::getInstance()->getStringForKey(key.c_str(), "");
 	if (result.empty())
 	{

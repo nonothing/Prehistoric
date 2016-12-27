@@ -12,14 +12,12 @@ typedef EventTempl<Direction, int>					DirectionEvent;
 class IControl : public cocos2d::Node
 {
 protected:
-	bool									_isSingle;
 	cocos2d::EventListenerTouchAllAtOnce*	_touchListener = nullptr;
 	cocos2d::EventListenerKeyboard*			_keyboardListener = nullptr;
 
-	virtual bool initTouch(bool single)
+	virtual bool initTouch()
 	{
 		if (!cocos2d::Node::init()) return false;
-		_isSingle = single;
 		_touchListener = cocos2d::EventListenerTouchAllAtOnce::create();
 		_touchListener->onTouchesBegan = CC_CALLBACK_2(IControl::TouchBegan, this);
 		_touchListener->onTouchesEnded = CC_CALLBACK_2(IControl::TouchEnded, this);
@@ -29,10 +27,9 @@ protected:
 		return true;
 	}
 
-	virtual bool initKeyBoard(bool single)
+	virtual bool initKeyBoard()
 	{
 		if (!cocos2d::Node::init()) return false;
-		_isSingle = single;
 		_keyboardListener = cocos2d::EventListenerKeyboard::create();
 		_keyboardListener->onKeyPressed = CC_CALLBACK_2(IControl::onKeyPressed, this);
 		_keyboardListener->onKeyReleased = CC_CALLBACK_2(IControl::onKeyReleased, this);

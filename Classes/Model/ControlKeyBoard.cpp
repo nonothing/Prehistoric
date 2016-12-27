@@ -2,10 +2,10 @@
 
 USING_NS_CC;
 
-ControlKeyBoard* ControlKeyBoard::create(bool single)
+ControlKeyBoard* ControlKeyBoard::create()
 {
 	ControlKeyBoard* control = new ControlKeyBoard();
-	if (control && control->init(single))
+	if (control && control->init())
 	{
 		return (ControlKeyBoard*)control->autorelease();
 	}
@@ -15,9 +15,9 @@ ControlKeyBoard* ControlKeyBoard::create(bool single)
 	return control;
 }
 
-bool ControlKeyBoard::init(bool single)
+bool ControlKeyBoard::init()
 {
-	return IControl::initKeyBoard(single);
+	return IControl::initKeyBoard();
 }
 
 void ControlKeyBoard::onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event)
@@ -100,7 +100,7 @@ int ControlKeyBoard::KeyCodeToPlayerID(cocos2d::EventKeyboard::KeyCode keyCode)
 	case cocos2d::EventKeyboard::KeyCode::KEY_RIGHT_ARROW:
 	case cocos2d::EventKeyboard::KeyCode::KEY_KP_ENTER:
 	case cocos2d::EventKeyboard::KeyCode::KEY_ENTER:
-		return _isSingle ? 0 : 1;
+		return 1;
 	default:	return 9999;
 	}
 }

@@ -4,10 +4,10 @@
 
 USING_NS_CC;
 
-ControlJoystick* ControlJoystick::create(bool single)
+ControlJoystick* ControlJoystick::create()
 {
 	ControlJoystick* control = new ControlJoystick();
-	if (control && control->init(single))
+	if (control && control->init())
 	{
 		return (ControlJoystick*)control->autorelease();
 	}
@@ -17,9 +17,9 @@ ControlJoystick* ControlJoystick::create(bool single)
 	return control;
 }
 
-bool ControlJoystick::init(bool single)
+bool ControlJoystick::init()
 {
-	if (!IControl::initKeyBoard(single) || !IControl::initTouch(single)) return false;
+	if (!IControl::initKeyBoard() || !IControl::initTouch()) return false;
 
 	_scale = GameSettings::Instance().getScaleButtons();
 	float opacity = GameSettings::Instance().getOpacityButtons();
@@ -65,7 +65,7 @@ void ControlJoystick::setButtonParameters(cocos2d::Sprite* button, float scale, 
 {
 	button->setScale(scale);
 	button->setOpacity(opacity);
-	button->setPosition(GameSettings::Instance().getPosition(button->getTag(), _isSingle));
+	button->setPosition(GameSettings::Instance().getPosition(button->getTag()));
 	addChild(button);
 }
 

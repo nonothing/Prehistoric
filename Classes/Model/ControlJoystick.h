@@ -20,8 +20,8 @@ private:
 	void setButtonParameters(cocos2d::Sprite* button, float scale, float opacity);
 
 public:
-	static ControlJoystick* create(bool single);
-	virtual bool init(bool single);
+	static ControlJoystick* create();
+	virtual bool init();
 
 	virtual void onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event) override;
 	virtual void onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event) override;

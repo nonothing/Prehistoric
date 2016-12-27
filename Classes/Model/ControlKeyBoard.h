@@ -7,8 +7,8 @@
 class ControlKeyBoard : public IControl
 {
 public:
-	static ControlKeyBoard* create(bool single);
-	virtual bool init(bool single);
+	static ControlKeyBoard* create();
+	virtual bool init();
 
 	bool isMoveKey(cocos2d::EventKeyboard::KeyCode keyCode);
 	Direction KeyCodeToDiretion(cocos2d::EventKeyboard::KeyCode keyCode);
